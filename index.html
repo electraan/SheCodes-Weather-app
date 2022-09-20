@@ -5,10 +5,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="src/styles.css">
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <h1>Git Hub</h1>
-    <script src="index.js"></script>
+    <div class="container card">
+      <div class="card-body">
+        <div class="row">
+         <div class="col-5">
+          <form class="form-name" id="form-name">
+    <label>
+    <div><input
+    class="city" 
+    type="search"
+    required placeholder="Enter city"
+    id="form-value">
+  </div>
+    </label>
+        </form>
+    <br>
+      <br>
+        <span class="icon"> <img src="src/images/day_rain_thunder.svg" alt="weather icon" max-width="500"></span>
+        <h1><span class="temperature" id="temperature">19 </span> 
+    <a href="#" id="celcium">C&#176</a>/ <a href="#" id="fahrengheit">F</a>
+      </h1>
+    <br>
+    <h1>
+        <span id="city-name">City</span><br>
+        <small><em><span id="day"></span> <br>
+        <span id="date"></span><br>
+        <span id="time"></span></em></small>
+    </h1></div> 
+    
+    <div class="col-4">
+      <button type="button">Current Location</button>
+<h6 class="wind"><em>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<span id="highTemp">Highest temperature</span><br><br>
+<span id="lowTemp">Lowest temperature</span><br><br>
+<span id="feelsLike">Feels like</span><br><br>
+<span id="humidity">Humidity</span><br><br>
+<span id="windSpeed">Wind speed</span><br> <br>
+<span id="description">Description</span><br>
+</em>
+    </h6></div> 
+    
+    <div class="col-3">
+      <div class="card-body border m-1 rounded">
+<h6 class="week">
+        Sunday <br> 
+        C
+    </h6> <hr>
+  <h6 class="week">
+        Monday <br> 
+        C
+    </h6><hr>
+    <h6 class="week">
+        Tuesday <br> 
+        C
+    </h6><hr>
+    <h6 class="week-wed">
+        Wednesday <br> 
+        C
+    </h6><hr>
+    <h6 class="week">
+        Thursday <br> 
+        C
+    </h6>
+    <hr>
+    <h6 class="week">
+        Friday <br> 
+        C
+    </h6>
+    </div>
+    </div>
+  </div> 
+</div>
+</div>
+<script src="src/index.js"></script>
   </body>
 </html>

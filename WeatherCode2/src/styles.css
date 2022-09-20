@@ -1,7 +1,71 @@
-h1 {
+.container {
+  display: block;
+  border: solid 10px;
+  border-color: #d4ecfd;
+  border-radius: 5px;
+  color: #5a6275;
+  max-width: 600px;
+  min-width: 450px;
+  margin: 20px auto;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+body {
+  background: #e8e8e8;
   text-align: center;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  font-size: 25px;
-  color: blueviolet;
+}
+h1 {
+  display: block;
+  text-align: center;
+  margin-top: -20px;
+  font-size: 25pt;
+}
+h6 {
+  text-align: center;
+}
+h6.week-wed {
+  margin: 0 -6px 0 -6px;
+}
+h6.week-wed:hover {
+  display: block;
+  color: rgb(91, 91, 255);
+  cursor: pointer;
+}
+.wind {
+  display: block;
+  text-align: left;
+}
+a {
+  text-decoration: none;
+  color: #5a6275;
+}
+h6.week:hover {
+  display: block;
+  color: rgb(91, 91, 255);
+  cursor: pointer;
+}
+form {
+  display: block;
+  margin-top: 10px;
+}
+button {
+  display: block;
+  border: solid 5px;
+  border-color: #d4ecfd;
+  border-radius: 5px;
+  margin-top: 4px;
+}
+button:hover {
+  color: rgb(91, 91, 255);
+}
+.city {
+  display: block;
+  border: solid 5px;
+  border-color: #d4ecfd;
+  border-radius: 5px;
+  margin-top: -24px;
+}
+img {
+  display: block;
+  margin-top: -45px;
 }
