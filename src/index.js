@@ -129,7 +129,7 @@ function getCityTemp(response) {
     response.data.main.feels_like
   )} C&#176`;
   let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = `Humidity: ${response.data.main.humidity}`;
+  humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   let windSpeed = document.querySelector("#windSpeed");
   windSpeed.innerHTML = `Wind speed: ${response.data.wind.speed} km/h`;
   let description = document.querySelector("#description");
