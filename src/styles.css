@@ -68,7 +68,7 @@ button:hover {
 img {
   display: block;
   margin-top: -45px;
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 .open-source {
   display: block;
