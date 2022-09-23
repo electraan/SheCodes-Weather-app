@@ -77,3 +77,6 @@ img {
 .city-name {
   margin-top: 0;
 }
+h1.temperature {
+  margin-bottom: 0;
+}
