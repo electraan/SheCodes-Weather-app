@@ -69,3 +69,8 @@ img {
   display: block;
   margin-top: -45px;
 }
+.open-source {
+  display: block;
+  text-align: center;
+  font-size: 9pt;
+}
