@@ -74,3 +74,6 @@ img {
   text-align: center;
   font-size: 9pt;
 }
+h1.temperature {
+  margin-bottom: 0;
+}
