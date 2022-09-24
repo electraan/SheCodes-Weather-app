@@ -19,6 +19,7 @@ h1 {
   text-align: center;
   margin-top: -20px;
   font-size: 25pt;
+  margin-bottom: 0;
 }
 h6 {
   text-align: center;
@@ -73,7 +74,4 @@ img {
   display: block;
   text-align: center;
   font-size: 9pt;
-}
-h1.temperature {
-  margin-bottom: 0;
 }
