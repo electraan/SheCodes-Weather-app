@@ -80,7 +80,9 @@ function getMetric(response) {
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   let windSpeed = document.querySelector("#windSpeed");
-  windSpeed.innerHTML = `Wind speed: ${response.data.wind.speed} km/h`;
+  windSpeed.innerHTML = `Wind speed: ${Math.round(
+    response.data.wind.speed
+  )} km/h`;
   let description = document.querySelector("#description");
   description.innerHTML = `It's ${response.data.weather[0].description} today`;
 }
@@ -131,7 +133,9 @@ function getCityTemp(response) {
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   let windSpeed = document.querySelector("#windSpeed");
-  windSpeed.innerHTML = `Wind speed: ${response.data.wind.speed} km/h`;
+  windSpeed.innerHTML = `Wind speed: ${Math.round(
+    response.data.wind.speed
+  )} km/h`;
   let description = document.querySelector("#description");
   description.innerHTML = `It's ${response.data.weather[0].description} today`;
 }
