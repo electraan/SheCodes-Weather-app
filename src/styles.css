@@ -57,10 +57,8 @@ form {
   border-color: #8a9daa;
   border-radius: 5px;
   margin-top: -24px;
-  box-sizing: 50px;
-}
-.city:hover {
-  cursor: col-resize;
+  width: 150px;
+  font-style: italic;
 }
 img {
   display: block;
