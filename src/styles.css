@@ -51,9 +51,6 @@ form {
   width: 300px;
   margin: 28px auto;
   margin-left: -13px;
-  /*display: block;
-  margin-top: 10px;
-  box-sizing: 300px;*/
 }
 input {
   width: 100%;
@@ -91,10 +88,11 @@ button:before {
   margin-top: -24px;
   font-style: italic;
 }
-img {
+.icon {
   display: block;
   margin-top: -60px;
-  margin-bottom: -50px;
+  margin-bottom: 60px;
+  size: 400pt;
 }
 .open-source {
   display: block;

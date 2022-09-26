@@ -85,6 +85,11 @@ function getMetric(response) {
   )} km/h`;
   let description = document.querySelector("#description");
   description.innerHTML = `It's ${response.data.weather[0].description} today`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function handlePosition(position) {
@@ -116,6 +121,11 @@ function getCityTemp(response) {
   cityElement.innerHTML = response.data.name;
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = `${Math.round(response.data.main.temp)}`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   let highTemp = document.querySelector("#highTemp");
   highTemp.innerHTML = `Highest temp ${Math.round(
     response.data.main.temp_max
