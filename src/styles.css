@@ -60,7 +60,7 @@ form {
   box-sizing: inherit;
 }
 .city:hover {
-  cursor: zoom-in;
+  cursor: ew-resize;
 }
 img {
   display: block;
