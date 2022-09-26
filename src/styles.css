@@ -1,6 +1,6 @@
 .container {
   display: block;
-  border: solid 10px;
+  border: solid 10px transparent;
   border-color: #d4ecfd;
   border-radius: 5px;
   color: #5a6275;
