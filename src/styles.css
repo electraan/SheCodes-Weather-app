@@ -47,11 +47,41 @@ h6.week:hover {
   cursor: pointer;
 }
 form {
-  display: block;
+  position: relative;
+  width: 300px;
+  margin: 10px auto;
+  margin-left: -13px;
+  /*display: block;
   margin-top: 10px;
-  box-sizing: 300px;
+  box-sizing: 300px;*/
 }
+input {
+  width: 134%;
+  height: 35px;
+  padding-left: 10px;
+  border: 2px solid #b0c7d6;
+  border-radius: 5px;
+  outline: none;
 
+  color: #9e9c9c;
+}
+button {
+  position: absolute;
+  top: -4px;
+  right: 0px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #b0c7d6;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+button:before {
+  content: "\f002";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #f9f0da;
+}
 .city {
   display: block;
   border: solid 3px;
