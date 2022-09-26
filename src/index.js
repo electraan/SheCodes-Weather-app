@@ -66,11 +66,11 @@ function getMetric(response) {
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = `${Math.round(response.data.main.temp)}`;
   let highTemp = document.querySelector("#highTemp");
-  highTemp.innerHTML = `Highest temperature ${Math.round(
+  highTemp.innerHTML = `Highest temp ${Math.round(
     response.data.main.temp_max
   )} C&#176`;
   let lowTemp = document.querySelector("#lowTemp");
-  lowTemp.innerHTML = `Lowest temperature ${Math.round(
+  lowTemp.innerHTML = `Lowest temp ${Math.round(
     response.data.main.temp_min
   )} C&#176`;
   let feelsLike = document.querySelector("#feelsLike");
@@ -117,11 +117,11 @@ function getCityTemp(response) {
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = `${Math.round(response.data.main.temp)}`;
   let highTemp = document.querySelector("#highTemp");
-  highTemp.innerHTML = `Highest temperature ${Math.round(
+  highTemp.innerHTML = `Highest temp ${Math.round(
     response.data.main.temp_max
   )} C&#176`;
   let lowTemp = document.querySelector("#lowTemp");
-  lowTemp.innerHTML = `Lowest temperature ${Math.round(
+  lowTemp.innerHTML = `Lowest temp ${Math.round(
     response.data.main.temp_min
   )} C&#176`;
   let feelsLike = document.querySelector("#feelsLike");
