@@ -1,7 +1,7 @@
 .container {
   display: block;
-  border: solid 10px transparent;
-  border-color: #d4ecfd;
+  border: solid 5px;
+  border-color: #8a9daa;
   border-radius: 5px;
   color: #5a6275;
   max-width: 600px;
@@ -53,14 +53,14 @@ form {
 
 .city {
   display: block;
-  border: solid 5px;
-  border-color: #d4ecfd;
+  border: solid 3px;
+  border-color: #8a9daa;
   border-radius: 5px;
   margin-top: -24px;
-  box-sizing: inherit;
+  box-sizing: 50px;
 }
 .city:hover {
-  cursor: ew-resize;
+  cursor: col-resize;
 }
 img {
   display: block;
