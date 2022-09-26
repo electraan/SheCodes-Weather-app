@@ -49,6 +49,7 @@ h6.week:hover {
 form {
   display: block;
   margin-top: 10px;
+  box-sizing: 200px;
 }
 
 .city {
@@ -57,7 +58,6 @@ form {
   border-color: #b0c7d6;
   border-radius: 5px;
   margin-top: -24px;
-  width: 150px;
   font-style: italic;
 }
 img {
