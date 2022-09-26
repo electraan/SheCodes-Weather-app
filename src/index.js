@@ -98,8 +98,6 @@ function myLocation() {
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 myLocation();
-/*let currentLocation = document.querySelector("button");
-currentLocation.addEventListener("click", myLocation);*/
 
 function searchingCity(event) {
   event.preventDefault();

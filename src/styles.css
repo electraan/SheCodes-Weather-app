@@ -49,16 +49,7 @@ form {
   display: block;
   margin-top: 10px;
 }
-button {
-  display: block;
-  border: solid 5px;
-  border-color: #d4ecfd;
-  border-radius: 5px;
-  margin-top: 4px;
-}
-button:hover {
-  color: rgb(91, 91, 255);
-}
+
 .city {
   display: block;
   border: solid 5px;
