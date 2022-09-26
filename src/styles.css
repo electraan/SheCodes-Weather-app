@@ -49,9 +49,9 @@ form {
   display: block;
   margin-top: 10px;
 }
-col-4 description {
+col-4.description {
   display: block;
-  margin-top: 25%;
+  margin-top: 25px;
 }
 .city {
   display: block;
