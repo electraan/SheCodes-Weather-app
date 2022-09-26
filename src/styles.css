@@ -57,6 +57,10 @@ form {
   border-color: #d4ecfd;
   border-radius: 5px;
   margin-top: -24px;
+  box-sizing: inherit;
+}
+.city:hover {
+  cursor: zoom-in;
 }
 img {
   display: block;
