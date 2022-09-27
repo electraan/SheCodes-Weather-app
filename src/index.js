@@ -35,36 +35,27 @@ function searchCity(event) {
   let formValue = document.querySelector("#form-value");
   city.innerHTML = formValue.value;
 }
-
 formCity = document.querySelector("#form-name");
 formCity.addEventListener("submit", searchCity);
 
-function convertTemperature(event) {
+/*function convertTempBack(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
-}
-
-let fahrengheit = document.querySelector("#fahrengheit");
-fahrengheit.addEventListener("click", convertTemperature);
-
-function convertTempBack(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
+  let temperature = response.data.main.temp;
   temperatureElement.innerHTML = Math.round((temperature - 32) / 1, 8);
 }
 
 let celcium = document.querySelector("#celcium");
-celcium.addEventListener("click", convertTempBack);
+celcium.addEventListener("click", convertTempBack);*/
+let firstCelcius = null;
 
 function getMetric(response) {
   let city = response.data.name;
   let tempElement = document.querySelector("#city-name");
   tempElement.innerHTML = `${city}`;
+  firstCelcius = response.data.main.temp;
   let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = `${Math.round(response.data.main.temp)}`;
+  temperature.innerHTML = Math.round(firstCelcius);
   let highTemp = document.querySelector("#highTemp");
   highTemp.innerHTML = `Highest temp ${Math.round(
     response.data.main.temp_max
@@ -104,23 +95,12 @@ function myLocation() {
 }
 myLocation();
 
-function searchingCity(event) {
-  event.preventDefault();
-  let key = "454b3c15e44c7f345644cf4c8c057675";
-  let city = document.querySelector("#form-value").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=eng`;
-
-  axios.get(`${apiUrl}&appid=${key}`).then(getCityTemp);
-}
-
-formCity = document.querySelector("#form-name");
-formCity.addEventListener("submit", searchingCity);
-
 function getCityTemp(response) {
   let cityElement = document.querySelector("#city-name");
   cityElement.innerHTML = response.data.name;
   let tempElement = document.querySelector("#temperature");
-  tempElement.innerHTML = `${Math.round(response.data.main.temp)}`;
+  firstCelcius = response.data.main.temp;
+  tempElement.innerHTML = Math.round(firstCelcius);
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -147,3 +127,24 @@ function getCityTemp(response) {
   let description = document.querySelector("#description");
   description.innerHTML = `It's ${response.data.weather[0].description} today`;
 }
+
+function searchingCity(event) {
+  event.preventDefault();
+  let key = "454b3c15e44c7f345644cf4c8c057675";
+  let city = document.querySelector("#form-value").value;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=eng`;
+
+  axios.get(`${apiUrl}&appid=${key}`).then(getCityTemp);
+}
+
+formCity = document.querySelector("#form-name");
+formCity.addEventListener("submit", searchingCity);
+
+function convertTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round((firstCelcius * 9) / 5 + 32);
+}
+
+let fahrengheit = document.querySelector("#fahrengheit");
+fahrengheit.addEventListener("click", convertTemperature);
