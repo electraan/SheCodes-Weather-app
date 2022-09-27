@@ -33,7 +33,7 @@ function searchCity(event) {
   event.preventDefault();
   let city = document.querySelector("#city-name");
   let formValue = document.querySelector("#form-value");
-  city.innerHTML = formValue.value;
+  city.innerHTML = formValue.value.toLowercase.trim();
 }
 formCity = document.querySelector("#form-name");
 formCity.addEventListener("submit", searchCity);
