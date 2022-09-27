@@ -38,15 +38,6 @@ function searchCity(event) {
 formCity = document.querySelector("#form-name");
 formCity.addEventListener("submit", searchCity);
 
-/*function convertTempBack(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  let temperature = response.data.main.temp;
-  temperatureElement.innerHTML = Math.round((temperature - 32) / 1, 8);
-}
-
-let celcium = document.querySelector("#celcium");
-celcium.addEventListener("click", convertTempBack);*/
 let firstCelcius = null;
 
 function getMetric(response) {
@@ -148,3 +139,12 @@ function convertTemperature(event) {
 
 let fahrengheit = document.querySelector("#fahrengheit");
 fahrengheit.addEventListener("click", convertTemperature);
+
+function convertTempBack(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(firstCelcius);
+}
+
+let celcium = document.querySelector("#celcium");
+celcium.addEventListener("click", convertTempBack);
