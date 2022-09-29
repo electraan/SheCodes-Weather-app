@@ -36,12 +36,12 @@ function showForecast() {
   weekDays.forEach(function (day, index) {
     if (index < 4) {
       forecastHTML += `<span class="forecast-day" id="forecast-day">
-        ${day}</span> <span class="forecast-tempHigh">C&#176</span> <br>
+        ${day}</span> <span class="forecast-tempHigh">C&#176</span><br>
         <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" width="25"/>
         <span class="forecast-tempLow"> C&#176</span><hr>`;
     } else {
       forecastHTML += `<span class="forecast-day" id="forecast-day">
-        ${day}</span> <span class="forecast-tempHigh">C&#176</span> <br>
+        ${day}</span> <span class="forecast-tempHigh">C&#176</span><br>
         <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" width="25"/>
         <span class="forecast-tempLow"> C&#176</span>`;
     }

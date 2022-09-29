@@ -77,8 +77,8 @@ button:before {
 }
 .icon {
   display: block;
-  margin-top: -80px;
-  margin-bottom: 20px;
+  margin-top: -20px;
+  margin-bottom: 10px;
 }
 .open-source {
   display: block;
