@@ -21,7 +21,7 @@ h1 {
   font-size: 25pt;
   margin-bottom: 0;
 }
-h6 {
+.forecast-day {
   text-align: center;
 }
 
@@ -33,11 +33,6 @@ h6 {
 a {
   text-decoration: none;
   color: #5a6275;
-}
-h6.week:hover {
-  display: block;
-  color: rgb(91, 91, 255);
-  cursor: pointer;
 }
 form {
   position: relative;
@@ -52,7 +47,6 @@ input {
   border: 2px solid #b0c7d6;
   border-radius: 5px;
   outline: none;
-
   color: #9e9c9c;
 }
 button {
@@ -83,8 +77,8 @@ button:before {
 }
 .icon {
   display: block;
-  margin-top: -60px;
-  margin-bottom: 60px;
+  margin-top: -80px;
+  margin-bottom: 20px;
 }
 .open-source {
   display: block;
