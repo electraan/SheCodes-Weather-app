@@ -29,7 +29,9 @@ let year = nowTime.getFullYear();
 date = document.querySelector("#date");
 date.innerHTML = `${fulldate}/${month1}/${year}`;
 
-function showForecast() {
+function showForecast(response) {
+  let forecast = response.data.list;
+  console.log(forecast);
   let forecastElement = document.querySelector("#weatherForecast");
   let forecastHTML = "";
   let weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu"];
@@ -37,18 +39,18 @@ function showForecast() {
     if (index < 4) {
       forecastHTML += `<span class="forecast-day" id="forecast-day">
         ${day}</span> <span class="forecast-tempHigh">C&#176</span><br>
-        <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" width="25"/>
+        <img src="http://openweathermap.org/img/wn/${forecast[4].weather[0].icon}@2x.png" alt="" width="25"/>
         <span class="forecast-tempLow"> C&#176</span><hr>`;
     } else {
       forecastHTML += `<span class="forecast-day" id="forecast-day">
         ${day}</span> <span class="forecast-tempHigh">C&#176</span><br>
-        <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" width="25"/>
+        <img src="http://openweathermap.org/img/wn/${forecast[4].weather[0].icon}@2x.png" alt="" width="25"/>
         <span class="forecast-tempLow"> C&#176</span>`;
     }
   });
   forecastElement.innerHTML = forecastHTML;
 }
-showForecast();
+
 function searchCity(event) {
   event.preventDefault();
   let city = document.querySelector("#city-name");
@@ -92,6 +94,7 @@ function getMetric(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getCoordinates(response.data.coord);
 }
 
 function handlePosition(position) {
@@ -105,6 +108,13 @@ function myLocation() {
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 myLocation();
+
+function getCoordinates(coordinates) {
+  let key = "454b3c15e44c7f345644cf4c8c057675";
+  let apiUrl2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&units=metric&lang=eng`;
+
+  axios.get(apiUrl2).then(showForecast);
+}
 
 function getCityTemp(response) {
   let cityElement = document.querySelector("#city-name");
@@ -137,6 +147,7 @@ function getCityTemp(response) {
   )} km/h`;
   let description = document.querySelector("#description");
   description.innerHTML = `It's ${response.data.weather[0].description} today`;
+  getCoordinates(response.data.coord);
 }
 
 function searchingCity(event) {
