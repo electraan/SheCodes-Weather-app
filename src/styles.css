@@ -20,10 +20,6 @@ body {
   padding-right: 5px;
   padding-left: 5px;
 }
-.card-body all {
-  background-image: https://images.unsplash.com/photo-1513695313903-acbab7360cb1?ixlib=rb-1.2.1&dl=branislav-milosevic-_i-iUhgXUBQ-unsplash.jpg&q=80&fm=jpg&crop=entropy&cs=tinysrgb;
-}
-
 h1 {
   display: block;
   margin-top: -20px;
@@ -43,7 +39,7 @@ form {
   position: relative;
   width: 300px;
   margin: 28px auto;
-  margin-left: 0px;
+  margin-left: 15px;
 }
 input {
   width: 100%;
