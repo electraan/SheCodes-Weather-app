@@ -29,23 +29,44 @@ let year = nowTime.getFullYear();
 date = document.querySelector("#date");
 date.innerHTML = `${fulldate}/${month1}/${year}`;
 
+function forecastDay(dayNum) {
+  let date = new Date(dayNum * 1000);
+  let day = date.getDay();
+  let weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return weekDays[day];
+}
+
 function showForecast(response) {
-  let forecast = response.data.list;
-  console.log(forecast);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weatherForecast");
   let forecastHTML = "";
-  let weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu"];
-  weekDays.forEach(function (day, index) {
-    if (index < 4) {
+  forecast.forEach(function (forecast, index) {
+    if (index < 5 && index > 0) {
       forecastHTML += `<span class="forecast-day" id="forecast-day">
-        ${day}</span> <span class="forecast-tempHigh">C&#176</span><br>
-        <img src="http://openweathermap.org/img/wn/${forecast[4].weather[0].icon}@2x.png" alt="" width="25"/>
-        <span class="forecast-tempLow"> C&#176</span><hr>`;
-    } else {
+        ${forecastDay(
+          forecast.dt
+        )}</span> <span class="forecast-tempHigh">${Math.round(
+        forecast.temp.max
+      )}&#176</span><br>
+        <img src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png" alt="" width="25"/>
+        <span class="forecast-tempLow"> ${Math.round(
+          forecast.temp.min
+        )}&#176</span><hr>`;
+    } else if (index === 5) {
       forecastHTML += `<span class="forecast-day" id="forecast-day">
-        ${day}</span> <span class="forecast-tempHigh">C&#176</span><br>
-        <img src="http://openweathermap.org/img/wn/${forecast[4].weather[0].icon}@2x.png" alt="" width="25"/>
-        <span class="forecast-tempLow"> C&#176</span>`;
+        ${forecastDay(
+          forecast.dt
+        )}</span> <span class="forecast-tempHigh">${Math.round(
+        forecast.temp.max
+      )}&#176</span><br>
+        <img src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png" alt="" width="25"/>
+        <span class="forecast-tempLow"> ${Math.round(
+          forecast.temp.min
+        )}&#176</span>`;
     }
   });
   forecastElement.innerHTML = forecastHTML;
@@ -70,11 +91,11 @@ function getMetric(response) {
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = Math.round(firstCelcius);
   let highTemp = document.querySelector("#highTemp");
-  highTemp.innerHTML = `Highest temp ${Math.round(
+  highTemp.innerHTML = `High temp ${Math.round(
     response.data.main.temp_max
   )} C&#176`;
   let lowTemp = document.querySelector("#lowTemp");
-  lowTemp.innerHTML = `Lowest temp ${Math.round(
+  lowTemp.innerHTML = `Low temp ${Math.round(
     response.data.main.temp_min
   )} C&#176`;
   let feelsLike = document.querySelector("#feelsLike");
@@ -111,8 +132,7 @@ myLocation();
 
 function getCoordinates(coordinates) {
   let key = "454b3c15e44c7f345644cf4c8c057675";
-  let apiUrl2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&units=metric&lang=eng`;
-
+  let apiUrl2 = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&units=metric&lang=eng`;
   axios.get(apiUrl2).then(showForecast);
 }
 
@@ -128,11 +148,11 @@ function getCityTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   let highTemp = document.querySelector("#highTemp");
-  highTemp.innerHTML = `Highest temp ${Math.round(
+  highTemp.innerHTML = `High temp ${Math.round(
     response.data.main.temp_max
   )} C&#176`;
   let lowTemp = document.querySelector("#lowTemp");
-  lowTemp.innerHTML = `Lowest temp ${Math.round(
+  lowTemp.innerHTML = `Low temp ${Math.round(
     response.data.main.temp_min
   )} C&#176`;
   let feelsLike = document.querySelector("#feelsLike");
