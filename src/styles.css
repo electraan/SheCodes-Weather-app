@@ -21,8 +21,8 @@ body {
   background-image: URL(images/mountains_small.jpg);
 }
 .card-body {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: -20px;
+  padding-right: -20px;
 }
 h1 {
   display: block;
