@@ -51,7 +51,7 @@ function showForecast(response) {
         <img src="http://openweathermap.org/img/wn/${
           forecast.weather[0].icon
         }@2x.png" alt="" width="25"/>
-        <span class="forecast-tempLow"> ${Math.round(
+        <span class="forecast-tempLow" id = "forecast-tempLow"> ${Math.round(
           forecast.temp.min
         )}&#176</span><hr>`;
     } else if (index === 5) {
@@ -64,7 +64,7 @@ function showForecast(response) {
         <img src="http://openweathermap.org/img/wn/${
           forecast.weather[0].icon
         }@2x.png" alt="" width="25"/>
-        <span class="forecast-tempLow"> ${Math.round(
+        <span class="forecast-tempLow" id = "forecast-tempLow"> ${Math.round(
           forecast.temp.min
         )}&#176</span>`;
     }
@@ -91,15 +91,15 @@ function getMetric(response) {
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = Math.round(firstCelcius);
   let highTemp = document.querySelector("#highTemp");
-  highTemp.innerHTML = `High temp ${Math.round(
+  highTemp.innerHTML = `High temp: ${Math.round(
     response.data.main.temp_max
   )} C&#176`;
   let lowTemp = document.querySelector("#lowTemp");
-  lowTemp.innerHTML = `Low temp ${Math.round(
+  lowTemp.innerHTML = `Low temp: ${Math.round(
     response.data.main.temp_min
   )} C&#176`;
   let feelsLike = document.querySelector("#feelsLike");
-  feelsLike.innerHTML = `Feels like ${Math.round(
+  feelsLike.innerHTML = `Feels like: ${Math.round(
     response.data.main.feels_like
   )} C&#176`;
   let humidity = document.querySelector("#humidity");
@@ -148,15 +148,15 @@ function getCityTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   let highTemp = document.querySelector("#highTemp");
-  highTemp.innerHTML = `High temp ${Math.round(
+  highTemp.innerHTML = `High temp: ${Math.round(
     response.data.main.temp_max
   )} C&#176`;
   let lowTemp = document.querySelector("#lowTemp");
-  lowTemp.innerHTML = `Low temp ${Math.round(
+  lowTemp.innerHTML = `Low temp: ${Math.round(
     response.data.main.temp_min
   )} C&#176`;
   let feelsLike = document.querySelector("#feelsLike");
-  feelsLike.innerHTML = `Feels like ${Math.round(
+  feelsLike.innerHTML = `Feels like: ${Math.round(
     response.data.main.feels_like
   )} C&#176`;
   let humidity = document.querySelector("#humidity");

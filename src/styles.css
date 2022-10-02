@@ -1,5 +1,6 @@
 .container {
   display: block;
+  padding: 0;
   border: solid 5px;
   border-color: #b0c7d6;
   border-radius: 5px;
@@ -14,12 +15,13 @@ body {
   background: #e8e8e8;
   text-align: center;
 }
-.card-body {
-  margin-left: -10px;
-  margin-right: 0px;
+.card-body.all {
+  margin-right: 0;
   padding-right: 5px;
   padding-left: 5px;
+  background-image: URL(images/mountains_small.jpg);
 }
+
 h1 {
   display: block;
   margin-top: -20px;
@@ -49,6 +51,7 @@ input {
   border-radius: 5px;
   outline: none;
   color: #9e9c9c;
+  background: transparent;
 }
 button {
   position: absolute;
@@ -84,4 +87,10 @@ button:before {
   display: block;
   text-align: center;
   font-size: 9pt;
+}
+.forecast-tempLow {
+  color: white;
+}
+.description {
+  color: white;
 }
